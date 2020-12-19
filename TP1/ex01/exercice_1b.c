@@ -4,15 +4,30 @@
 
 float *remontee(float A[N][N], float B[N], int n)
 {
+  float     *x;
+  float      s;
+  int        i,j;
 
   /* A hint: you cant return an array which is allocated in the stack memory. \
-  ** you may consider to create a dynamically allocated array and return a pointer to it. \
+  
+   ** you may consider to create a dynamically allocated array and return a pointer to it. \
   ** https://gribblelab.org/CBootCamp/7_Memory_Stack_vs_Heap.html
   */
+  x = malloc(sizeof(float) * n);
 
-  /******Implement the solution here******/
-  /***************************************/
   
+  /***************************************/
+  x[n - 1] = B[n - 1] / A[n -1][n-1];
+
+  for (i = n-2 ; i >= 0; i--)
+  {
+	  s = 0;
+	  for (j = i + 1; j < n; j++)
+	  {
+		 s += A[i][j] * x[j];
+	  }
+	  x[i] = (B[i] - s) / A[i][i];
+  } 
   /***************************************/
   return x;
 }
