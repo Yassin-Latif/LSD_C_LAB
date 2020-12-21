@@ -14,8 +14,6 @@ float *descente(float A[N][N], float B[N], int n)
   x = malloc(sizeof(float) * n);
 
 
-  /******Implement the solution here******/
-  /***************************************/
   x[0] = B[0] / A[0][0];
 
   for (i= 1; i < n; i++)
@@ -27,7 +25,6 @@ float *descente(float A[N][N], float B[N], int n)
           }
 	  x[i] = (B[i] - s) / A[i][i];
   }
-  /**************************************/
 
   return (x);
 }
