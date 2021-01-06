@@ -5,14 +5,14 @@ double f(int t)
 	return t;
 }
 
-double rectangle_gauche( double a, double b, int n)
+double rectangle_droite( double a, double b, int n)
 {
 	int i;
 	double h = (b - a) / n;
 	float s = 0;
-	for (i = 1; i <= n; i++)
+	for (i = 0; i <= n; i++)
 	{
-		s+= f(a + (i+1) * h);
+		s+= f(a + i * h);
 	}
 	return h*s;
 }
@@ -28,6 +28,6 @@ int main()
 	printf("La valeur de n est : ");
 	scanf("%d", &n);
 	double x;
-	x = rectangle_gauche(a,b, n);
+	x = rectangle_droite(a,b, n);
 	printf("Result is : %lf", x);
 }
