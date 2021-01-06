@@ -10,9 +10,9 @@ double rectangle_droite( double a, double b, int n)
 	int i;
 	double h = (b - a) / n;
 	float s = 0;
-	for (i = 0; i <= n; i++)
+	for (i = 1; i <= n; i++)
 	{
-		s+= f(a + i * h);
+		s+= f(a + (i+1) * h);
 	}
 	return h*s;
 }
